@@ -13,9 +13,6 @@ import { server } from "../../../redux/store";
 import { Skeleton } from "../../../components/loading";
 import { responseToast } from "../../../utils/features";
 
-const img =
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=804";
-
 const Productmanagement = () => {
   const { user } = useSelector(
     (state: { userReducer: UserReducerIntialState }) => state.userReducer

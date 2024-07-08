@@ -1,7 +1,6 @@
 import { FaTrash } from "react-icons/fa";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
-import { useState } from "react";
 import { server } from "../../../redux/store";
 import { Order, OrderItem } from "../../../types/types";
 import { useSelector } from "react-redux";
@@ -13,8 +12,6 @@ import {
 } from "../../../redux/api/orderAPI";
 import { Skeleton } from "../../../components/loading";
 import { responseToast } from "../../../utils/features";
-
-const orderItems: any[] = [];
 
 const defaultData: Order = {
   shippingInfo: {
@@ -56,22 +53,6 @@ const TransactionManagement = () => {
     discount,
     shippingCharges,
   } = data?.order || defaultData;
-
-  const [order, setOrder] = useState({
-    name: "Puma Shoes",
-    address: "77 black street",
-    city: "Neyword",
-    state: "Nevada",
-    country: "US",
-    pinCode: 242433,
-    status: "Processing",
-    subtotal: 4000,
-    discount: 1200,
-    shippingCharges: 0,
-    tax: 200,
-    total: 4000 + 200 + 0 - 1200,
-    orderItems,
-  });
 
   const [updateOrder] = useUpdateOrderMutation();
   const [deleteOrder] = useDeleteOrderMutation();
