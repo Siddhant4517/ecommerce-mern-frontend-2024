@@ -1,0 +1,50 @@
+.product-card{
+    width: 18.75rem;
+    height: 24rem;
+    padding: 1rem;
+    flex: none;
+    @include flex(column,flex-start,center,4px);
+    position: relative;
+    background-color: white;
+
+    &:hover > div{
+        opacity: 1;
+    }
+
+    img{
+        @include square(calc(15.75rem - 3rem));
+        object-fit: cover;
+        margin: 1rem;
+    }
+
+    span{
+        font-weight: 700;
+        font-size: 1.1rem;
+
+    }
+
+    >div{
+        position: absolute;
+        @include square(100%);
+        opacity: 0;
+        height: 95%;
+        top: 0;
+        left: 0;
+        background-color: rgba(11, 8, 8, 0.421);
+        @include flex;
+        button{
+            @include flex;
+            @include square(3rem);
+            border-radius: 100%;
+            border: none;
+            background-color: red($color: #000000);
+            cursor: pointer;
+            color: rgb(12, 112, 212);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            &:hover{
+                rotate: 20deg;
+            }
+        }
+    }
+}
